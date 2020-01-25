@@ -188,7 +188,7 @@ printf "\e[1;91m[*] Press Ctrl + C to stop or save session\n\e[0m"
 
 count_pass=$(wc -l $wl_pass | cut -d " " -f1)
 
-while [[ "$token" -lt "$count_pass" ]]; do
+while [[ "$token" -lt "service tor start $count_pass" ]]; do
 IFS=$'\n'
 for pass in $(sed -n '/\b'$pass'\b/,'$(($token+threads))'p' $wl_pass); do
 #for pass in $(sed -n '/\b'$pass'\b/,'$threads'p' $wl_pass); do
